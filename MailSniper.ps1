@@ -2924,7 +2924,7 @@ function Invoke-PasswordSprayEWS{
                 {
                     $ErrorMessage = $_.Exception.Message
 		    
-		    if ($ErrorMessage -like "*no mailbox*")
+		    if ($ErrorMessage -like "*SMTP*" -or $ErrorMessage -like "*no mailbox*")
                     {
                         Write-Output "[*] SUCCESS! User:$username Password:$Password, but unfortunately no valid mailbox!"
                     }
